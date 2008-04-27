@@ -1,6 +1,8 @@
 #ifndef __SHELLSORT_HPP__
 #define __SHELLSORT_HPP__
 
+#include <algorithm>
+
 namespace tsl {
 
 	template <class T>

@@ -1,6 +1,8 @@
 #ifndef __BUBBLESORT_HPP__
 #define __BUBBLESORT_HPP__
 
+#include <algorithm>
+
 namespace tsl {
 
 	template <class T>

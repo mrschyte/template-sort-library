@@ -1,6 +1,7 @@
 #ifndef __QUICKSORT_HPP__
 #define __QUICKSORT_HPP__
 
+#include <algorithm>
 #include <vector>
 
 #define QUICKSORT_STACK_LIMIT		8192

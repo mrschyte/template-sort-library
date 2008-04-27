@@ -1,6 +1,8 @@
 #ifndef __GNOMESORT_HPP__
 #define __GNOMESORT_HPP__
 
+#include <algorithm>
+
 namespace tsl {
 
 	template <class T>

@@ -1,6 +1,8 @@
 #ifndef __INSERTIONSORT_HPP__
 #define __INSERTIONSORT_HPP__
 
+#include <algorithm>
+
 namespace tsl {
 
 	template <class T>

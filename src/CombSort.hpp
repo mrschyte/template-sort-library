@@ -1,6 +1,8 @@
 #ifndef __COMBSORT_HPP__
 #define __COMBSORT_HPP__
 
+#include <algorithm>
+
 namespace tsl {
 
 	template <class T>

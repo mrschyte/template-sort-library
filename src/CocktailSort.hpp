@@ -1,6 +1,8 @@
 #ifndef __COCKTAILSORT_HPP__
 #define __COCKTAILSORT_HPP__
 
+#include <algorithm>
+
 namespace tsl {
 
 	template <class T>

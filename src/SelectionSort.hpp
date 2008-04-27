@@ -1,6 +1,8 @@
 #ifndef __SELECTIONSORT_HPP__
 #define __SELECTIONSORT_HPP__
 
+#include <algorithm>
+
 namespace tsl {
 
 	template <class T>
