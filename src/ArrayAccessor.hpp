@@ -1,31 +1,51 @@
 #ifndef __ARRAYACCESSOR_HPP__
 #define __ARRAYACCESSOR_HPP__
 
-#include <boost/shared_array.hpp>
 #include <cstring>
 
 template <class T>
-class ArrayAccessor : public boost::shared_array<T>
+class ArrayAccessor
 {
 	private:
+		T* storedArray;
 		unsigned int arraySize;
+		bool allocatedArray;
 
 	public:
-		ArrayAccessor(T* p, unsigned int length) : boost::shared_array<T>(new T[length])
+		ArrayAccessor(T* array, unsigned int length)
 		{
-			std::memcpy(this->get(), p, sizeof(T) * length);
+			storedArray = array;
 			arraySize = length;
+			allocatedArray = false;
 		}
 
-		ArrayAccessor(ArrayAccessor<T>& arrayAccessor) : boost::shared_array<T>(new T[arrayAccessor.size()])
+		ArrayAccessor(ArrayAccessor<T>& arrayAccessor)
 		{
-			std::memcpy(this->get(), arrayAccessor.get(), sizeof(T) * arrayAccessor.size());
+			storedArray = new T[arrayAccessor.size()];
+			std::memcpy(storedArray, arrayAccessor.get(), sizeof(T) * arrayAccessor.size());
 			arraySize = arrayAccessor.size();
+			allocatedArray = true;
 		}
 
 		~ArrayAccessor()
 		{
+			if (allocatedArray)
+				delete[] storedArray;
+		}
 
+		T& at(unsigned int index)
+		{
+			return storedArray[index];
+		}
+
+		T& operator[](unsigned int index)
+		{
+			return at(index);
+		}
+
+		T* get()
+		{
+			return storedArray;
 		}
 
 		unsigned int size()
