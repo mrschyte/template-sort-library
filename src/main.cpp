@@ -23,6 +23,9 @@ int main(void)
 	Benchmark<ArrayAccessor<char> >::benchmark(CocktailSort<ArrayAccessor<char> >::sort, &delta, count, arrayAccessor, arrayAccessor.size());
 	printf("%d iterations of CocktailSort took %f seconds\n", count, delta.tv_sec + (delta.tv_usec) / 1000000.0);
 
+	Benchmark<ArrayAccessor<char> >::benchmark(CombSort<ArrayAccessor<char> >::sort, &delta, count, arrayAccessor, arrayAccessor.size());
+	printf("%d iterations of CombSort took %f seconds\n", count, delta.tv_sec + (delta.tv_usec) / 1000000.0);
+
 	Benchmark<ArrayAccessor<char> >::benchmark(GnomeSort<ArrayAccessor<char> >::sort, &delta, count, arrayAccessor, arrayAccessor.size());
 	printf("%d iterations of GnomeSort took %f seconds\n", count, delta.tv_sec + (delta.tv_usec) / 1000000.0);
 

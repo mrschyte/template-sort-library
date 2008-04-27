@@ -9,5 +9,6 @@
 #include "MergeSort.hpp"
 #include "GnomeSort.hpp"
 #include "CocktailSort.hpp"
+#include "CombSort.hpp"
 
 #endif
