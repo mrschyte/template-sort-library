@@ -1,0 +1,17 @@
+C++ = g++ ;
+LINK = $(C++) ;
+
+BUILDTYPE ?= RELEASE ;
+
+if $(BUILDTYPE) = DEBUG
+{
+	C++FLAGS += -g ;
+}
+else if $(BUILDTYPE) = RELEASE
+{
+	C++FLAGS += -O3 ;
+}
+
+C++FLAGS += -I /usr/local/include ;
+
+Main sort : main.cpp ;
