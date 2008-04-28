@@ -40,8 +40,13 @@ namespace tsl {
 
 				for (unsigned int m = 1; m < length; m = m * 2)
 				{
-					for (unsigned int i = 0; i < length - m; i = i + 2 * m)
-						merge(array, temp, i, i + m, (i + 2 * m) < length ? i + 2 * m : length);
+					unsigned int i;
+
+					for (i = 0; i + 2 * m < length; i = i + 2 * m)
+						merge(array, temp, i, i + m, i + 2 * m);
+
+					if (i < length - m)
+						merge(array, temp, i, i + m, length);
 				}
 			}
 	};
