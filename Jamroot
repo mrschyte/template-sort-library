@@ -1,0 +1,3 @@
+project template-sort-library
+  : requirements <include>unit_test
+  ;
