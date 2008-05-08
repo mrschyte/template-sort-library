@@ -28,9 +28,7 @@ namespace tsl {
 					array[k++] = temp[j++];
 
 				for (i = left; i < right; i++)
-				{
 					temp[i] = array[i];
-				}
 			}
 
 		public:
